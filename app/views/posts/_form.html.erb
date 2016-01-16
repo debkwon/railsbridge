@@ -1,0 +1,17 @@
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :author, "#{current_user.email}" %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: '60x6' %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
