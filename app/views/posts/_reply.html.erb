@@ -1,4 +1,5 @@
  <div>
  	<h4>Comment by <%= reply.author_name %></h4>
- 	<p><%= reply.body %></p>
+ 	<p><i><%= reply.body %></i></p>
+ 	<p>reply made at: <%=reply.created_at.strftime("%B %d, %Y %l:%M %P %Z")%>
 </div>
