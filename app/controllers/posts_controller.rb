@@ -18,6 +18,8 @@ include PostsHelper
 
 	def show
 		@post = Post.find(params[:id])
+		@reply = Reply.new 
+		@reply.post_id = @post.id 
 
 	end
 end

@@ -1,6 +1,6 @@
 <h1>This is where the posted posts go after you add them</h1>
 
-<div id="post_container">
+<div>
 	<h3>Title: <%= @post.title %></h3>
 	<p><i>Posted by <%= @post.author_name %></i></p>
 	<p>on <%= @post.created_at.strftime("%B %d, %Y %l:%M %P %Z")%></p>
@@ -8,5 +8,10 @@
 		<%= @post.content %>
 	</p>
 </div>
+
+<h3>Reply: (<%= @post.replies.size %>)</h3>
+
+<%= render partial: 'posts/reply', collection: @post.replies %> 
+<%= render partial: "replies/form" %>
 
 <%= link_to "<< Go back", posts_path %>

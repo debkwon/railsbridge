@@ -1,0 +1,20 @@
+<h3>Post a reply</h3>
+
+<%= form_for [@post, @reply] do |f| %>
+
+<p>
+	<%= f.label :author_name, "Your Name" %><br />
+	<%= f.text_field :author_name %>
+</p>
+
+<p>
+	<%= f.label :body, "Your Reply" %><br />
+	<%= f.text_field :body %>
+</p>
+
+<p>
+	<%= f.submit 'Submit' %>
+</p>
+
+<%end%>
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116030841) do
+ActiveRecord::Schema.define(version: 20160119013838) do
 
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20160116030841) do
     t.datetime "updated_at",  null: false
     t.string   "author_name"
   end
+
+  create_table "replies", force: :cascade do |t|
+    t.string   "author_name"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "replies", ["post_id"], name: "index_replies_on_post_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
